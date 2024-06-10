@@ -1,5 +1,5 @@
 boto3
 pandas
 streamlit
-Pillow
+pillow
 toml

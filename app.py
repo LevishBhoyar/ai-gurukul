@@ -18,9 +18,9 @@ with open('.streamlit/secrets.toml') as f:
     config = toml.load(f)
 
 # AWS credentials
-AWS_ACCESS_KEY_ID = config['aws']['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = config['aws']['AWS_SECRET_ACCESS_KEY']
-AWS_DEFAULT_REGION = config['aws']['AWS_DEFAULT_REGION']
+AWS_ACCESS_KEY_ID = "AKIA4JC2O7NMNX5GMF5D"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_DEFAULT_REGION = "eu-north-1"
 
 bucket_name = "ai-gurukul-streamlit"
 
