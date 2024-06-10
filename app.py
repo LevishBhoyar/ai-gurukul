@@ -11,16 +11,16 @@ import boto3
 import pandas as pd
 from PIL import Image
 import io
-import toml
+import os
+from dotenv import load_dotenv, dotenv_values
 
-# AWS credentials
-with open('.streamlit/secrets.toml') as f:
-    config = toml.load(f)
+# Load environment variables from .env file
+load_dotenv()
 
-# AWS credentials
-AWS_ACCESS_KEY_ID = "AKIA4JC2O7NMNX5GMF5D"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_DEFAULT_REGION = "eu-north-1"
+# Fetching AWS credentials from environment variables
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION", "eu-north-1")
 
 bucket_name = "ai-gurukul-streamlit"
 
