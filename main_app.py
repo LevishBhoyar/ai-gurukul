@@ -11,11 +11,17 @@ import boto3
 import pandas as pd
 from PIL import Image
 import io
+import toml
 
 # AWS credentials
-AWS_ACCESS_KEY_ID = "AKIA4JC2O7NMNX5GMF5D"
-AWS_SECRET_ACCESS_KEY = "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"
-AWS_DEFAULT_REGION = "eu-north-1"
+with open('.streamlit/secrets.toml') as f:
+    config = toml.load(f)
+
+# AWS credentials
+AWS_ACCESS_KEY_ID = config['aws']['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = config['aws']['AWS_SECRET_ACCESS_KEY']
+AWS_DEFAULT_REGION = config['aws']['AWS_DEFAULT_REGION']
+
 bucket_name = "ai-gurukul-streamlit"
 
 # Initializing the s3 client here.
@@ -59,7 +65,7 @@ st.write("2. `waterDataset.csv` - A CSV file with sample data.")
 st.write("3. `JalRakshak - SIH'24 Winners.jpg` - A JPEG image.")
 
 # Enterend file name
-file_name = st.text_input("Enter the file name in the bucket:", "example.txt")
+file_name = st.text_input("Enter the file name in the bucket:")
 
 
 # Fetching information of the entered file-name
