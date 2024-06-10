@@ -11,17 +11,11 @@ import boto3
 import pandas as pd
 from PIL import Image
 import io
-import os
-from dotenv import load_dotenv, dotenv_values
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Fetching AWS credentials from environment variables
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION", "eu-north-1")
-
+# AWS Credentials
+AWS_ACCESS_KEY_ID="AKIA4JC2O7NMNX5GMF5D"
+AWS_SECRET_ACCESS_KEY="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"
+AWS_DEFAULT_REGION="eu-north-1"
 bucket_name = "ai-gurukul-streamlit"
 
 # Initializing the s3 client here.
@@ -65,7 +59,7 @@ st.write("2. `waterDataset.csv` - A CSV file with sample data.")
 st.write("3. `JalRakshak - SIH'24 Winners.jpg` - A JPEG image.")
 
 # Enterend file name
-file_name = st.text_input("Enter the file name in the bucket:")
+file_name = st.text_input("Enter the file name in the bucket:", "ai-gurukul.txt")
 
 
 # Fetching information of the entered file-name
