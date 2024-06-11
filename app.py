@@ -3,6 +3,7 @@ References :
 1. boto3 : https://youtu.be/JKlOlDFwsao?si=1cFFnof9HGXMfH5L
 2. streamlit : https://www.youtube.com/live/YzvMpvXyUfs?si=kg2xBzNzUVrpIqxJ
 3. Deploying : https://youtu.be/3sQhVKO5xAA?si=HxAnEoLj4l-OnCE5
+4. Railway Deployement : https://github.com/ellis-jc/Streamlit-App
 '''
 
 
@@ -13,10 +14,10 @@ from PIL import Image
 import io
 
 # AWS Credentials
-AWS_ACCESS_KEY_ID="AKIA4JC2O7NMNX5GMF5D"
-AWS_SECRET_ACCESS_KEY="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"
-AWS_DEFAULT_REGION="eu-north-1"
-bucket_name = "ai-gurukul-streamlit"
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY=""
+AWS_DEFAULT_REGION=""
+bucket_name = ""
 
 # Initializing the s3 client here.
 s3_client = boto3.client(
